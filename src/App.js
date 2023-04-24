@@ -1,65 +1,158 @@
-import React from "react";
 import "./App.css";
-import {BsX} from "react-icons/bs";
-import {FaCheck} from "react-icons/fa";
-import {ImCross} from "react-icons/im";
-
-
+import React,{startTransition, useState} from 'react';
 import Button from 'react-bootstrap/Button';
+import Badge from "react-bootstrap/Badge";
 import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { BsCartFill} from "react-icons/bs";
+import { AiFillStar} from "react-icons/ai";
 
-function AutoLayoutExample() {
+export default function App() {
+  const data = [
+    {
+      productImage:"https://wp.uthscsa.edu/demo/wp-content/uploads/sites/13/2017/06/450x300.png",
+      productName: "Fancy Product",
+      price:"$40.00-$80.00",
+      rating1:"rate",
+      addbutton:"View Options",
+      
+    },
+    {
+      productImage:"https://wp.uthscsa.edu/demo/wp-content/uploads/sites/13/2017/06/450x300.png",
+      productName: "Special Item",
+      price:<s>$20.00</s>,
+      price1:"$18.00",
+      rating:<AiFillStar/>,
+      addbutton:"Add to Cart",
+      sale:"sale"
+    },
+    {
+      productImage:"https://wp.uthscsa.edu/demo/wp-content/uploads/sites/13/2017/06/450x300.png",
+      productName: "Sale Item",
+      price:<s>$50.00</s>,
+      price1: "$25.00",
+      rating1: "rate",
+      addbutton:"Add to Cart",
+      sale:"sale"
+    },
+    {
+      productImage:"https://wp.uthscsa.edu/demo/wp-content/uploads/sites/13/2017/06/450x300.png",
+      productName: "Popular Item",
+      price: "$40.00",
+      rating: <AiFillStar/>,
+      addbutton:"Add to Cart",
+    },
+    {
+      productImage:"https://wp.uthscsa.edu/demo/wp-content/uploads/sites/13/2017/06/450x300.png",
+      productName: "Sale Item",
+      price:<s>$50.00</s>,
+      price1:"$25.00",
+       rating1: "rate",
+      addbutton:"Add to Cart",
+      sale:"sale"
+    },
+    {
+      productImage:"https://wp.uthscsa.edu/demo/wp-content/uploads/sites/13/2017/06/450x300.png",
+      productName: "Fancy Product",
+      price: "$120.00 - $280.00",
+      rating1: "rate",
+      addbutton:"View Options",
+    },
+    {
+      productImage:"https://wp.uthscsa.edu/demo/wp-content/uploads/sites/13/2017/06/450x300.png",
+      productName: "Special Item",
+      price:<s>$20.00</s>,
+      price1:"$18.00",
+      rating:<AiFillStar/>,
+      addbutton:"Add to Cart",
+      sale:"sale"
+    },
+    {
+      productImage:"https://wp.uthscsa.edu/demo/wp-content/uploads/sites/13/2017/06/450x300.png",
+      productName: "Popular Item",
+      price:"$40.00",
+      rating: <AiFillStar/>,
+      addbutton:"Add to Cart",
+    },
+  ]
+
+  const [count,setCount]=useState(0)
   return (
-    <Container className="big-box">
-     
-      <Row>
-        <Col className="box1">
-          <header className="header">FREE</header>
-          <h1>$0</h1><span>/month</span><hr></hr>
-          <div className="move"><FaCheck></FaCheck> Single User</div><br></br>
-          <div className="move"><FaCheck></FaCheck> 5GB Storage</div><br></br>
-           <div className="move"><FaCheck></FaCheck> Unlimited Public  Projects</div><br></br>
-           <div className="move"><FaCheck></FaCheck> Community Access</div><br></br>
-          <div className="move-cross"><ImCross></ImCross> Unlimited Private Projects </div><br></br>
-          <div className="move-cross"><ImCross></ImCross> Dedicated Phone Support</div> <br></br>
-          <div className="move-cross"><ImCross></ImCross> Free Subdomain</div> <br></br>
-          <div className="move-cross"><ImCross></ImCross> Monthly Status Reports</div><br></br>
-          <Button variant="primary">BUTTON</Button>
-        </Col>
-        <Col className="box2">
-        <header className="header">PLUS</header>
-          <h1>$9</h1><span>/month</span><hr></hr>
-          <div className="move"><FaCheck></FaCheck> <b>5 Users</b></div><br></br>
-          <div className="move"><FaCheck></FaCheck> 5GB Storage</div><br></br>
-           <div className="move"><FaCheck></FaCheck> Unlimited Public  Projects</div><br></br>
-           <div className="move"><FaCheck></FaCheck> Community Access</div><br></br>
-          <div className="move"><FaCheck></FaCheck> Unlimited Private Projects </div><br></br>
-          <div className="move"><FaCheck></FaCheck> Dedicated Phone Support</div> <br></br>
-          <div className="move"><FaCheck></FaCheck> Free Subdomain</div> <br></br>
-          <div className="move-cross"><ImCross></ImCross> Monthly Status Reports</div><br></br>
-          <Button variant="primary">BUTTON</Button>
-        </Col>
-        <Col className="box3">
-        <header className="header">PRO</header>
-          <h1>$49</h1><span>/month</span><hr></hr>
-          <div className="move"><FaCheck></FaCheck> <b>Unlimited Users</b></div><br></br>
-          <div className="move"><FaCheck></FaCheck> 5GB Storage</div><br></br>
-           <div className="move"><FaCheck></FaCheck> Unlimited Public  Projects</div><br></br>
-           <div className="move"><FaCheck></FaCheck> Community Access</div><br></br>
-          <div className="move"><FaCheck></FaCheck> Unlimited Private Projects </div><br></br>
-          <div className="move"><FaCheck></FaCheck> Dedicated Phone Support</div> <br></br>
-          <div className="move"><FaCheck></FaCheck> <b>Unlimited</b> Free Subdomain</div> <br></br>
-          <div className="move"><FaCheck></FaCheck> Monthly Status Reports</div><br></br>
-          <Button variant="primary">BUTTON</Button>
-        </Col>
-      </Row>
-    </Container>
+    <div className="App">
+      <header>
+      <span className="start">Start Bootstrap</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span>Home</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span>About</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span>
+      <select>
+    <option >Shop</option>
+    <option >All Products</option><hr></hr>
+  <option >Popular Items</option>
+  <option >New Arrivals</option>
+  </select>
+      </span>
+      <span className="cart-value">
+  <Badge bg="sucess" className="badge">
+    <BsCartFill/>&nbsp;&nbsp;Cart {count}
+</Badge>
+</span>
+      </header>
+      <div className="box">
+<h1>Shop in Style</h1>
+<p>With this shop hompeage template</p>
+</div>
+    
+    
+  <div className="card-container">
+      {data.map((product,index)=>(
+   <Product
+   key={index}
+   prod={product}
+   count={count}
+   setCount={setCount}
+   sale={product.sale}
+   />
+      ))}
+   </div>
+    </div>
   );
 }
 
-export default AutoLayoutExample;
-  
-  
+function Product({prod,count,setCount,sale}){
+  const [show, setShow]=useState(false)
+  function addtocart(){
+    setCount(count+1);
+    setShow(!show)
+  }
+  function removefromcart(){
+    setCount(count-1);
+    setShow(!show)
+  }
+  return(
+    <Card style={{ width: '18rem' }}>
+      <div className="image">
+      <Card.Img variant="top" className="img"src={prod.productImage} />
+    <p className="p">{prod.sale}</p>
+      </div>
+    
+    <Card.Body>
+
+      {/* {sale==true?<p className="sale">sale</p>:''} */}
+      <Card.Text className="text">{prod.productName}</Card.Text>
+     <Card.Text className="rating">{prod.rating}{prod.rating}{prod.rating}{prod.rating}{prod.rating}</Card.Text>
+
+      <Card.Text className="price">{prod.price}  {prod.price1}</Card.Text>
+      <Card.Text className="rating1">{prod.rating1}</Card.Text>
+
+     
+     
+
+{!show?
+      <Button variant="outline-secondary"
+      onClick={addtocart}>{prod.addbutton}</Button>:""}
+      {show?
+      <Button variant="outline-danger"
+      onClick={removefromcart}>Remove from Cart</Button>:""}
+    </Card.Body>
+  </Card>
+  )
+}
