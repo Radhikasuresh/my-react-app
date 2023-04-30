@@ -40,7 +40,7 @@ function Students({students, setStudents}) {
                      <p><b>Qualification:  </b>{stud.qualification}</p>
                      </div>
 
-                     <div className='control'>
+                     <div className='control class-name'>
                      <button className='edit' 
                      onClick={()=>history.push(`/edit/${stud.id}`)} >Edit</button> {" "}
                      <button className='delete'
