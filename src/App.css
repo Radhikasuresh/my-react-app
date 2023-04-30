@@ -1,85 +1,173 @@
-.card-container{
-  display: flex;
-  justify-content: center;
-  gap: 2rem ;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-.App{
-  text-align: center;
-}
-.cart-value{
-padding-left: 700px;
-  margin:10px;
-  color: green;
-  
-}
-.start{
-  font-size: 20px;
-  
-}
-.rating1{
-  color:white;
-}
-.price{
-  color: black;
-  font-weight: lighter;
-}
-s{
-  color:rgba(65, 61, 61, 0.74);
-  font-weight: lighter;
-}
-header{
-  background-color: rgb(241, 236, 236);
-  height: 40px;
-}
-.badge{
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 80px;
-}
-.badge:hover{
-background-color: black;
-}
-.box{
-  height: 300px;
-  background-color: rgba(0, 0, 0, 0.856);
-}
-h1{
-  color: whitesmoke;
-  padding-top: 90px;
-  font-size: 50px;
-}
-p{
-  font-size:17px;
-  color: gray;
-  font-weight: bold;
-}
-.text{
-  color:black;
-  font-size: 25px;
-}
-.rating{
-  color: rgb(255, 187, 0);
-  font-size: 20px;
-}
-img{
-  position:relative;
-}
-.sale{
-  position: absolute;
-  padding-left: 220px ;
-  color:black;
-}
-.image{
-  position: relative;
-}
-.p{
-  position: absolute;
-  top:0;
-  right:0;
-  padding-right:20px;
-  color: black;
-  font-family:'Times New Roman', Times, serif;
+*{
+  padding: 0px;
+  margin: 0px;
 }
 
+.main-component{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.heading{
+  padding : 50px;
+  font-family: sans-serif;
+  font-size: 40px;
+}
+
+.main-segment{
+  width: 100%;
+  text-align: center;
+ height: 100%;
+ 
+}
+.dashboard{
+  text-shadow:2px 3px 10px black;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  background-image:linear-gradient(to right,rgba(3, 161, 161, 0.808),rgb(148, 211, 211),rgb(9, 207, 207));
+  height: 900px;
+}
+.card{
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  gap :2rem;
+ align-content: space-around;
+  border : 1px solid rgb(167, 208, 209);
+  background-color: rgb(167, 208, 209);
+  width : 200px;
+  height: 180px;
+  margin : 12px;
+  border-radius: 30px;
+}
+.nopage{
+  height: 30px;
+  width: 200px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.nopage:hover{
+  background-color: gray;
+}
+
+.card-container{
+  display: grid;
+  gap :1rem;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+}
+
+.edit{
+ height: 30px;
+ width: 70px;
+}
+.edit{
+  height: 40px;
+  width: 70px;
+  border-radius: 10px;
+  border: 1px solid rgb(167, 208, 209);
+  font-size: 15px;
+  font-family: sans-serif;
+  background-color: rgb(177, 117, 152);
+  cursor: pointer;
+ }
+ .edit:hover{
+background-color: pink;
+ }
+.delete{
+  height: 40px;
+  width: 70px;
+  border-radius: 10px;
+  border: 1px solid rgb(167, 208, 209);
+  font-size: 15px;
+  font-family: sans-serif;
+  background-color: rgb(207, 85, 85);
+  cursor: pointer;
+ }
+ .delete:hover{
+  background-color: red;
+}
+p{
+  text-align: center;
+}
+
+label{
+  font-weight: bold;
+}
+.updateButton{
+  width: 160px;
+  height: 40px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: 1px solid gray;
+  cursor: pointer;
+  background-color: chocolate;
+}
+.updateButton:hover{
+  background-color: rgb(128, 77, 0);
+}
+input{
+  width: 150px;
+}
+.dashboardButton{
+ height: 30px;
+ width: 200px;
+ background-color:rgb(226, 91, 91);
+ border: 1px solid rgb(226, 91, 91);
+border-radius: 8px;
+font-size: 24px;
+color: black;
+margin-top: 20px;
+box-shadow: 5px 5px 15px maroon;
+cursor: pointer;
+}
+.dashboardButton:hover{
+  color: bisque;
+  background-color: rgb(221, 46, 46);
+}
+.listButton{
+  height: 30px;
+ width: 200px;
+ background-color:blue;
+ border: 1px solid blue;
+border-radius: 8px;
+font-size: 24px;
+color: black;
+margin-top: 20px;
+box-shadow: 5px 5px 15px rgb(20, 20, 112);
+cursor: pointer;
+}
+.listButton:hover{
+  color: bisque;
+  background-color: rgb(36, 36, 158);
+}
+.addButton:hover{
+  color: bisque;
+  background-color:green;
+}
+.addButton{
+  height: 30px;
+  cursor: pointer;
+ width: 200px;
+ background-color:rgba(146, 170, 13, 0.733);
+ border: 1px solid rgba(146, 170, 13, 0.733);
+border-radius: 8px;
+margin-top: 20px;
+font-size: 24px;
+color: black;
+box-shadow: 5px 5px 15px rgb(11, 53, 11);
+cursor: pointer;
+}
+.addStuButton{
+  height: 30px;
+ width: 200px;
+ background-color:rgb(2, 173, 2);
+ border: 1px solid rgb(2, 173, 2);
+ cursor: pointer;
+border-radius: 8px;
+margin-top: 20px;
+font-size: 24px;
+color: black;
+}
+.addStuButton:hover{
+  background-color: green;
+}
